@@ -96,6 +96,7 @@ jobs:
     - stage: build
       if: type = push
       os: osx
+      osx_image: xcode14.2
       go: 1.21.x
       env:
         - azure-osx
@@ -174,4 +175,3 @@ jobs:
       go: 1.21.x
       script:
         - travis_wait 30 go run build/ci.go test  -race $TEST_PACKAGES
-
